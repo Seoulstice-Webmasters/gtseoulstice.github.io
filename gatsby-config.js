@@ -8,19 +8,17 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "GT Seoulstice",
-    author: "Seoulstice Webmasters"
+    author: "Seoulstice Webmasters",
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-sass"
+      resolve: "gatsby-plugin-sass",
     },
     {
       resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: [
-          "Quicksand"
-        ]
-      }
-    }
+        fonts: ["Quicksand"],
+      },
+    },
   ],
 }
