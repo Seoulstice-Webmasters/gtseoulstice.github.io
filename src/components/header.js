@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 
 /*
@@ -9,11 +9,23 @@ defined in the module.
 */
 import headerStyles from "./header.module.scss"
 
-const header = () => {
+const Header = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `)
+
     return (
         <header className={headerStyles.header}>
             <h1>
-                <Link to="/" className={headerStyles.title}>GT SEOULSTICE</Link>
+                <Link to="/" className={headerStyles.title}>
+                    {data.site.siteMetadata.title}
+                </Link>
             </h1>
             <nav>
                 <ul className={headerStyles.navList}>
@@ -36,4 +48,4 @@ const header = () => {
     )
 }
 
-export default header
+export default Header
